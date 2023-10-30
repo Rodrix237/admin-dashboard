@@ -5,5 +5,75 @@
   width: 100%;
   height: 100vh;
   z-index: 1;
-  background-color: rgb(139, 139, 142);
+  background-color: rgb(14, 14, 211);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.container-form {
+  width: 600px;
+  height: 700;
+  border: solid 0.5px;
+  border-color: grey;
+  border-radius: 20px 0px 0px 20px;
+  background-color: white;
+}
+
+.form-login {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+.field-input {
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+input {
+  width: 400px;
+  height: 37px;
+  border: solid 0.5px;
+  border-color: grey;
+  border-radius: 5px;
+}
+
+.imageform {
+  margin-left: 50px;
+  margin-top: 12px;
+}
+
+.imlogo {
+  margin-left: 150px;
+  margin-top: 12px;
+}
+
+.illogin {
+  width: 450px;
+  height: 400px;
+  margin-left: 80px;
+  margin-top: 12px;
+}
+
+.text {
+  text-align: left;
+}
+
+.navigation {
+  margin-left: 20;
+  margin-right: 200000px;
+  width: 600px;
+}
+
+.container-image {
+  display: inline-block;
+  width: 600px;
+  height: 700;
+  border-radius: 0px 20px 20px 0px;
+  background-image: url("../../assets/wallpaper.png");
+  background-size: cover;
 }
