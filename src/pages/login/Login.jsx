@@ -5,6 +5,7 @@ import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { message, Form, Input, Button } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
+import SignupNavigation from "../../components/buttons/SignupNavigation.jsx";
 
 const Login = () => {
   const url = "http://localhost:3000/user/login";
@@ -64,7 +65,7 @@ const Login = () => {
           <div className="form-login">
             <h1>
               Welcome back to <br />
-              <font color="blue">ROD</font>
+              <font color="blue">ROD'App</font>
             </h1>
             <small>Sign in to your account below</small>
             <Form onSubmit={handleSubmit}>
@@ -128,6 +129,9 @@ const Login = () => {
               >
                 Log In
               </Button>
+              <div className="navigation">
+                <SignupNavigation />
+              </div>
             </Form>
           </div>
         </div>
