@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Login.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,7 @@ import { message, Form, Input, Button } from "antd";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
 
 const Login = () => {
+  const url = "http://localhost:3000/user/login";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,14 +19,37 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
+    const payload = {
+      email: email,
+      password: password,
+    };
+    authenticateUser(payload);
+  };
 
-    if (password === "admin") {
-      sessionStorage.setItem("email", email);
-      message.success("Connexion réussie");
-      navigate("/");
-    } else {
-      message.warning("Le mot de passe  est incorrect.");
-    }
+  const authenticateUser = (payload) => {
+    axios
+      .post(url, payload)
+      .then((resp) => {
+        console.log(resp.data.message);
+        if (resp.data.message === "Authorised") {
+          sessionStorage.setItem("email", email);
+          message.success("Connexion réussie");
+          navigate("/");
+        } else {
+          message.warning("Le mot de passe  est incorrect.");
+        }
+      })
+      .catch((err) => console.log(err));
+    axios.interceptors.resp.use(
+      (resp) => {
+        return resp;
+      },
+      (err) => {
+        if (err.resp.status === 401) {
+          message.warning("Accès refusée. Vérifier les informations saisies.");
+        }
+      }
+    );
   };
 
   return (
