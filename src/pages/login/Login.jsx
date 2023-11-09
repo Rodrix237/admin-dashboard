@@ -8,7 +8,7 @@ import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import SignupNavigation from "../../components/buttons/SignupNavigation.jsx";
 
 const Login = () => {
-  const url = "http://localhost:3000/user/login";
+  const url = "http://localhost:3000/api/user/login";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

@@ -4,7 +4,7 @@ import axios from "axios";
 import { Table } from "antd";
 
 const User = () => {
-  const url = "http://localhost:3000/user/all";
+  const url = "http://localhost:3000/api/user/all";
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);

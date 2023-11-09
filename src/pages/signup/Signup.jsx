@@ -15,7 +15,7 @@ import LoginNavigation from "../../components/buttons/LoginNavigation";
 const { Option } = Select;
 
 const Signup = () => {
-  const url = "http://localhost:3000/user/add";
+  const url = "http://localhost:3000/api/user/add";
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
