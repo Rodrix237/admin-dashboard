@@ -8,7 +8,8 @@ import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import SignupNavigation from "../../components/buttons/SignupNavigation.jsx";
 
 const Login = () => {
-  const url = "http://localhost:3000/api/user/login";
+  const base_url = import.meta.env.VITE_BASE_URL;
+  const url = base_url + "/user/login";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

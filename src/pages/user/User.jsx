@@ -4,7 +4,8 @@ import axios from "axios";
 import { Table } from "antd";
 
 const User = () => {
-  const url = "http://localhost:3000/api/user/all";
+  const base_url = import.meta.env.VITE_BASE_URL;
+  const url = base_url + "/user/all";
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);

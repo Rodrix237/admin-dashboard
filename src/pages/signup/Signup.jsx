@@ -15,7 +15,8 @@ import LoginNavigation from "../../components/buttons/LoginNavigation";
 const { Option } = Select;
 
 const Signup = () => {
-  const url = "http://localhost:3000/api/user/add";
+  const base_url = import.meta.env.VITE_BASE_URL;
+  const url = base_url + "/user/add";
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
