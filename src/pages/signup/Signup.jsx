@@ -21,6 +21,7 @@ const Signup = () => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirme, setConfirme] = useState("");
   const [phone, setPhone] = useState("");
 
   const navigate = useNavigate();
@@ -28,14 +29,18 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
-    const payload = {
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      password: password,
-      phone: phone,
-    };
-    registerUser(payload);
+    if (password === confirme) {
+      const payload = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password,
+        phone: phone,
+      };
+      registerUser(payload);
+    } else {
+      message.warning("La confirmation du mot de passe est incorrect.");
+    }
   };
 
   const registerUser = (payload) => {
@@ -152,6 +157,31 @@ const Signup = () => {
                   />
                 </Form.Item>
                 <Form.Item
+                  name={"phone"}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please, enter your phone number",
+                    },
+                    {
+                      type: "text",
+                      message: "phone number is not valid",
+                      warningOnly: true,
+                    },
+                  ]}
+                >
+                  <Input
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="Phone"
+                    id="phone"
+                    style={{ width: "250px", marginRight: "10px" }}
+                    prefix={<PhoneOutlined />}
+                  />
+                </Form.Item>
+              </div>
+              <div style={{ display: "flex" }}>
+                <Form.Item
                   name={"password"}
                   rules={[
                     {
@@ -174,29 +204,27 @@ const Signup = () => {
                     prefix={<LockOutlined />}
                   />
                 </Form.Item>
-              </div>
-              <div style={{ display: "flex" }}>
                 <Form.Item
-                  name={"phone"}
+                  name={"confirme"}
                   rules={[
                     {
                       required: true,
-                      message: "Please, enter your phone number",
+                      message: "Please, repeat password",
                     },
                     {
-                      type: "text",
-                      message: "phone number is not valid",
+                      type: "password",
+                      message: "password is not valid",
                       warningOnly: true,
                     },
                   ]}
                 >
-                  <Input
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Phone"
-                    id="phone"
+                  <Input.Password
+                    value={confirme}
+                    onChange={(e) => setConfirme(e.target.value)}
+                    placeholder="Confirme password"
+                    id="confirme"
                     style={{ width: "250px", marginRight: "10px" }}
-                    prefix={<PhoneOutlined />}
+                    prefix={<LockOutlined />}
                   />
                 </Form.Item>
               </div>
