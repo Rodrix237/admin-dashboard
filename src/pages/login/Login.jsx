@@ -12,6 +12,7 @@ const Login = () => {
   const url = base_url + "/user/login";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const navigate = useNavigate();
 

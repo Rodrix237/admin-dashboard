@@ -65,8 +65,23 @@ input {
 
 .navigation {
   margin-left: 20;
-  margin-right: 200000px;
+  /*margin-right: 200000px;*/
   width: 600px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.container-form {
+  width: 600px;
+  height: 700;
+  border: solid 0.5px;
+  border-color: grey;
+  border-radius: 20px 0px 0px 20px;
+  background-color: white;
 }
 
 .container-image {
@@ -76,4 +91,40 @@ input {
   border-radius: 0px 20px 20px 0px;
   background-image: url("../../assets/wallpaper.png");
   background-size: cover;
+}
+
+.row-form {
+  display: flex;
+}
+
+@media (width <= 1320px) {
+  .container-form {
+    border-radius: 20px;
+  }
+
+  .container-image {
+    display: none;
+  }
+}
+
+@media (width <= 650px) {
+  .container-form {
+    width: 60%;
+  }
+
+  .imageform {
+    display: none;
+  }
+
+  .row-form {
+    flex-direction: column;
+  }
+
+  .container {
+    margin-top: 25px;
+  }
+
+  .login-form-input {
+    width: 50%;
+  }
 }

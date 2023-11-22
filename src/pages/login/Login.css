@@ -8,21 +8,6 @@
   background-color: rgb(14, 14, 211);
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-.container-form {
-  width: 600px;
-  height: 700;
-  border: solid 0.5px;
-  border-color: grey;
-  border-radius: 20px 0px 0px 20px;
-  background-color: white;
-}
-
 .form-login {
   margin-left: 50px;
   margin-bottom: 20px;
@@ -67,6 +52,21 @@ input {
   margin-left: 20;
   margin-right: 200000px;
   width: 600px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.container-form {
+  width: 600px;
+  height: 700;
+  border: solid 0.5px;
+  border-color: grey;
+  border-radius: 20px 0px 0px 20px;
+  background-color: white;
 }
 
 .container-image {

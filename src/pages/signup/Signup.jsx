@@ -84,7 +84,7 @@ const Signup = () => {
               Create your <br /> account{" "}
             </h1>
             <Form onSubmit={handleSubmit}>
-              <div style={{ display: "flex" }}>
+              <div className="row-form">
                 <Form.Item
                   name={"firstname"}
                   rules={[
@@ -132,7 +132,7 @@ const Signup = () => {
                   />
                 </Form.Item>
               </div>
-              <div style={{ display: "flex" }}>
+              <div className="row-form">
                 <Form.Item
                   name={"email"}
                   rules={[
@@ -180,7 +180,7 @@ const Signup = () => {
                   />
                 </Form.Item>
               </div>
-              <div style={{ display: "flex" }}>
+              <div className="row-form">
                 <Form.Item
                   name={"password"}
                   rules={[
